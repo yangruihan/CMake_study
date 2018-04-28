@@ -14,4 +14,14 @@ configure_file (
 # add the binary tree to the search path for include files so that we will find TutorialConfig.h
 include_directories("${PROJECT_BINARY_DIR}")
 
+option(USE_MMATH
+       "Use tutorial provided math implementation" ON)
+
+if (USE_MMATH)
+    include_directories("{PROJECT_SOURCE_DIR}/include")
+    add_subdirectory (include)
+    set (EXTRA_LIBS ${EXTRA_LIBS} MMath)
+endif (USE_MMATH)
+
 add_executable (Tutorial hello.cpp)
+target_link_libraries (Tutorial ${EXTRA_LIBS})
