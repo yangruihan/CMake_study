@@ -32,6 +32,15 @@ target_link_libraries (Tutorial ${EXTRA_LIBS})
 # cmake -DCMAKE_INSTALL_PREFIX=.
 set (CMAKE_INSTALL_PREFIX ${PROJECT_BINARY_DIR})
 
+# use `make test` to active test case
+include (CTest)
+add_test (TutorialRuns Tutorial)
+
+# dose this system provide the log and exp functions
+include (CheckFunctionExists)
+check_function_exists (log HAVE_LOG)
+check_function_exists (exp HAVE_EXP)
+
 install (TARGETS Tutorial DESTINATION bin)
 install (FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h"
          DESTINATION include)

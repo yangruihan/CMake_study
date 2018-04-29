@@ -3,6 +3,8 @@
 #include "TutorialConfig.h"
 #include "include/mmath.h"
 
+#include "math.h"
+
 int main()
 {
     std::cout 
@@ -12,6 +14,10 @@ int main()
 
 #ifdef USE_MMATH
     std::cout << "1 + 2 = " << mmath::add(1, 2) << std::endl;
+#endif
+
+#if defined (HAVE_LOG) && defined (HAVE_EXP)
+    std::cout << exp(log(4) * 0.5) << std::endl;
 #endif
 
     return 0;

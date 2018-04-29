@@ -2,3 +2,6 @@
 #define Tutorial_VERSION_MINOR @Tutorial_VERSION_MINOR@
 
 #cmakedefine USE_MMATH
+
+#cmakedefine HAVE_LOG
+#cmakedefine HAVE_EXP
