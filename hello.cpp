@@ -1,11 +1,12 @@
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
 #include "TutorialConfig.h"
 #include "include/mmath.h"
 
-#include "math.h"
-
-int main()
+int main(int argc, char* argv[])
 {
     std::cout 
     << "Hello World" << std::endl;
