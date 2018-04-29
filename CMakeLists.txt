@@ -45,4 +45,9 @@ install (FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h"
 # use `make test` to active test case
 add_test (TutorialRuns Tutorial)
 
-
+# build a CPack driven installer package
+include (InstallRequiredSystemLibraries)
+set (CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
+set (CPACK_PACKAGE_VERSION_MAJOR "${Tutorial_VERSION_MAJOR}")
+set (CPACK_PACKAGE_VERSION_MINOR "${Tutorial_VERSION_MINOR}")
+include (CPack)
