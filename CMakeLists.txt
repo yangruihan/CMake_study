@@ -12,6 +12,8 @@ set (Tutorial_VERSION_MINOR 0)
 # cmake -DCMAKE_INSTALL_PREFIX=.
 set (CMAKE_INSTALL_PREFIX ${PROJECT_BINARY_DIR})
 
+set (CTEST_PROJECT_NAME "Tutorial")
+
 # dose this system provide the log and exp functions
 check_function_exists (log HAVE_LOG)
 check_function_exists (exp HAVE_EXP)
